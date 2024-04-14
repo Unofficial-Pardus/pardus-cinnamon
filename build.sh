@@ -47,6 +47,9 @@ cinnamon inxi synaptic p7zip-full ffmpeg gvfs-backends wget xdg-user-dirs file-r
 #Pardus apps
 chroot chroot apt install pardus-lightdm-greeter pardus-installer pardus-software pardus-package-installer pardus-night-light pardus-about pardus-update pardus-locales pardus-ayyildiz-grub-theme -y
 
+#Printer and bluetooth apps
+chroot chroot apt install printer-driver-all system-config-printer simple-scan blueman -y
+
 #Grub update
 chroot chroot apt upgrade -y
 chroot chroot update-grub
