@@ -45,7 +45,7 @@ chroot chroot apt install -y gedit eog gnome-screenshot gnome-clocks gnome-termi
 cinnamon inxi synaptic p7zip-full ffmpeg gvfs-backends wget xdg-user-dirs file-roller papirus-icon-theme orchis-gtk-theme
 
 #Pardus apps
-chroot chroot apt install pardus-lightdm-greeter pardus-installer pardus-software pardus-package-installer pardus-night-light pardus-about pardus-update pardus-locales pardus-ayyildiz-grub-theme -y
+chroot chroot apt install pardus-lightdm-greeter pardus-installer pardus-software pardus-package-installer pardus-night-light pardus-about pardus-update pardus-locales pardus-ayyildiz-grub-theme pardus-font-manager -y
 
 #Printer and bluetooth apps
 chroot chroot apt install printer-driver-all system-config-printer simple-scan blueman -y
