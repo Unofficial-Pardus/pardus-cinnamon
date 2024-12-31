@@ -30,7 +30,7 @@ echo -e "#!/bin/sh\nexit 101" > chroot/usr/sbin/policy-rc.d
 chmod +x chroot/usr/sbin/policy-rc.d
 
 #Kernel
-chroot chroot apt install -t yirmiuc-backports linux-image-amd64 linux-headers-amd64 -y
+chroot chroot apt install -t yirmiuc-backports linux-image-amd64 -y
 
 #Firmwares
 chroot chroot apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree firmware-amd-graphics firmware-realtek bluez-firmware \
