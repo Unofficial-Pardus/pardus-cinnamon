@@ -16,7 +16,7 @@ jobs:
         run: |
           sudo bash build.sh
           sudo mkdir -p /output
-          sudo mv *.iso /output/pardus-23-cinnamon-backports-$(date +%x).iso
+          sudo mv *.iso /output/*.iso
 
 
       - uses: "marvinpinto/action-automatic-releases@latest"
