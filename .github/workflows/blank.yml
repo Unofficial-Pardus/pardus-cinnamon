@@ -16,7 +16,7 @@ jobs:
         run: |
           sudo bash build.sh
           sudo mkdir -p /output
-          sudo mv *.iso /output/pardus-23-cinnamon-backports.iso
+          sudo mv *.iso /output/pardus-cinnamon-backports.iso
 
 
       - uses: "marvinpinto/action-automatic-releases@latest"
@@ -24,6 +24,6 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "main"
           prerelease: false
-          title: "pardus 23 cinnamon backports lite"
+          title: "pardus cinnamon backports lite"
           files: |
             /output/*
