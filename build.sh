@@ -5,19 +5,19 @@ apt install curl debootstrap xorriso squashfs-tools mtools grub-pc-bin grub-efi 
 set -ex
 mkdir chroot || true
 export DEBIAN_FRONTEND=noninteractive
-ln -s sid /usr/share/debootstrap/scripts/yirmiuc-deb || true
-debootstrap  --no-check-gpg --arch=amd64 yirmiuc-deb chroot http://depo.pardus.org.tr/pardus
+ln -s sid /usr/share/debootstrap/scripts/yirmibes-deb || true
+debootstrap  --no-check-gpg --arch=amd64 yirmibes-deb chroot http://depo.pardus.org.tr/pardus
 for i in dev dev/pts proc sys; do mount -o bind /$i chroot/$i; done
 
 cat > chroot/etc/apt/sources.list << EOF
-deb http://depo.pardus.org.tr/pardus yirmiuc main contrib non-free non-free-firmware
-deb http://depo.pardus.org.tr/pardus yirmiuc-deb main contrib non-free non-free-firmware
-deb http://depo.pardus.org.tr/guvenlik yirmiuc-deb main contrib non-free non-free-firmware
+deb http://depo.pardus.org.tr/pardus yirmibes main contrib non-free non-free-firmware
+deb http://depo.pardus.org.tr/pardus yirmibes-deb main contrib non-free non-free-firmware
+deb http://depo.pardus.org.tr/guvenlik yirmibes-deb main contrib non-free non-free-firmware
 EOF
 
-cat > chroot/etc/apt/sources.list.d/yirmiuc-backports.list << EOF
-deb http://depo.pardus.org.tr/backports yirmiuc-backports main contrib non-free non-free-firmware
-EOF
+#cat > chroot/etc/apt/sources.list.d/yirmibes-backports.list << EOF
+#deb http://depo.pardus.org.tr/backports yirmibes-backports main contrib non-free non-free-firmware
+#EOF
 
 chroot chroot apt update --allow-insecure-repositories
 chroot chroot apt install pardus-archive-keyring --allow-unauthenticated -y
@@ -30,10 +30,10 @@ echo -e "#!/bin/sh\nexit 101" > chroot/usr/sbin/policy-rc.d
 chmod +x chroot/usr/sbin/policy-rc.d
 
 #Kernel
-chroot chroot apt install -t yirmiuc-backports linux-image-amd64 -y
+#chroot chroot apt install -t yirmiuc-backports linux-image-amd64 -y
 
 #Firmwares
-chroot chroot apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree firmware-amd-graphics firmware-realtek bluez-firmware \
+chroot chroot apt install -y linux-image-amd64 firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree firmware-amd-graphics firmware-realtek bluez-firmware \
 firmware-intel-sound firmware-iwlwifi firmware-atheros firmware-b43-installer firmware-b43legacy-installer firmware-bnx2 firmware-bnx2x firmware-brcm80211 \
 firmware-cavium firmware-libertas firmware-myricom firmware-netxen firmware-qlogic firmware-samsung firmware-siano firmware-ti-connectivity firmware-zd1211
     
@@ -45,7 +45,7 @@ chroot chroot apt install -y gedit eog gnome-screenshot gnome-clocks gnome-termi
 cinnamon inxi synaptic p7zip-full ffmpeg gvfs-backends wget xdg-user-dirs file-roller gnome-disk-utility papirus-icon-theme orchis-gtk-theme
 
 #Pardus apps
-chroot chroot apt install pardus-lightdm-greeter pardus-installer pardus-software pardus-package-installer pardus-night-light pardus-about pardus-update pardus-locales pardus-ayyildiz-grub-theme pardus-font-manager -y
+chroot chroot apt install pardus-lightdm-greeter pardus-installer pardus-software pardus-package-installer pardus-about pardus-update pardus-locales pardus-bilge-grub-theme pardus-font-manager -y
 
 #Printer and bluetooth apps
 chroot chroot apt install printer-driver-all system-config-printer simple-scan blueman -y
