@@ -5,7 +5,7 @@ apt install curl debootstrap xorriso squashfs-tools mtools grub-pc-bin grub-efi 
 set -ex
 mkdir chroot || true
 export DEBIAN_FRONTEND=noninteractive
-ln -s sid /usr/share/debootstrap/scripts/yirmibes-deb || true
+ln -s sid /usr/share/debootstrap/scripts/yirmiuc-deb || true
 debootstrap  --no-check-gpg --arch=amd64 yirmibes-deb chroot http://depo.pardus.org.tr/pardus
 for i in dev dev/pts proc sys; do mount -o bind /$i chroot/$i; done
 
