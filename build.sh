@@ -38,17 +38,17 @@ firmware-intel-sound firmware-iwlwifi firmware-atheros firmware-b43-installer fi
 firmware-cavium firmware-libertas firmware-myricom firmware-netxen firmware-qlogic firmware-samsung firmware-siano firmware-ti-connectivity firmware-zd1211
     
 #Init and Window System
-chroot chroot apt install xorg xinit lightdm -y
+chroot chroot apt install xorg xinit -y
 
 #Desktop apps
-chroot chroot apt install -y gedit eog gnome-screenshot gnome-clocks gnome-terminal gnome-system-monitor gnome-calculator gnome-weather gnome-calendar network-manager-gnome \
+chroot chroot apt install -y mousepad ristretto gnome-screenshot gnome-clocks gnome-terminal gnome-system-monitor gnome-calculator gnome-weather gnome-calendar network-manager-gnome \
 cinnamon inxi synaptic p7zip-full ffmpeg gvfs-backends wget xdg-user-dirs file-roller gnome-disk-utility papirus-icon-theme orchis-gtk-theme
 
 #Pardus apps
-# chroot chroot apt install pardus-lightdm-greeter pardus-installer pardus-software pardus-package-installer pardus-about pardus-update pardus-locales pardus-bilge-grub-theme pardus-font-manager -y
+chroot chroot apt install -y pardus-lightdm-greeter pardus-installer pardus-software pardus-package-installer pardus-about pardus-update pardus-locales pardus-bilge-grub-theme pardus-font-manager
 
 #Printer and bluetooth apps
-chroot chroot apt install printer-driver-all system-config-printer simple-scan blueman -y
+chroot chroot apt install -y printer-driver-all system-config-printer simple-scan blueman
 
 #Grub update
 chroot chroot apt upgrade -y
