@@ -45,10 +45,11 @@ chroot chroot apt install -y xorg xinit
 
 #Desktop apps
 chroot chroot apt install -y mousepad ristretto gnome-screenshot gnome-clocks gnome-terminal gnome-system-monitor gnome-calculator gnome-weather gnome-calendar network-manager-gnome \
-cinnamon inxi synaptic p7zip-full ffmpeg gvfs-backends wget xdg-user-dirs file-roller gnome-disk-utility papirus-icon-theme orchis-gtk-theme
+cinnamon inxi synaptic p7zip-full ffmpeg gvfs-backends wget xdg-user-dirs file-roller gnome-disk-utility
 
 #Pardus apps
-chroot chroot apt install -y pardus-lightdm-greeter pardus-installer pardus-software pardus-package-installer pardus-about pardus-update pardus-locales pardus-bilge-grub-theme pardus-font-manager
+chroot chroot apt install -y pardus-lightdm-greeter pardus-installer pardus-software pardus-package-installer pardus-about pardus-update pardus-locales pardus-bilge-grub-theme \
+pardus-gnome-icon-theme pardus-font-manager
 
 #Printer and bluetooth apps
 chroot chroot apt install -y printer-driver-all system-config-printer simple-scan blueman
