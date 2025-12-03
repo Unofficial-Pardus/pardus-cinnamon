@@ -1,4 +1,4 @@
-Pardus 23 Cinnamon backports ISO (Unofficial) 
+Pardus 25 Cinnamon backports ISO (Unofficial) 
 
 Kurulum sonrası:
 
