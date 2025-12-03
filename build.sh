@@ -16,9 +16,9 @@ deb http://depo.pardus.org.tr/guvenlik yirmibes-deb main contrib non-free non-fr
 EOF
 
 #Pardus Backports repo
-#cat > chroot/etc/apt/sources.list.d/yirmibes-backports.list << EOF
-#deb http://depo.pardus.org.tr/backports yirmibes-backports main contrib non-free non-free-firmware
-#EOF
+cat > chroot/etc/apt/sources.list.d/backports.list << EOF
+deb http://deb.debian.org/debian trixie-backports main contrib non-free non-free-firmware
+EOF
 
 chroot chroot apt update --allow-insecure-repositories
 chroot chroot apt install -y pardus-archive-keyring --allow-unauthenticated
@@ -30,10 +30,10 @@ echo -e "#!/bin/sh\nexit 101" > chroot/usr/sbin/policy-rc.d
 chmod +x chroot/usr/sbin/policy-rc.d
 
 #Kernel
-chroot chroot apt install -y linux-image-amd64
+#chroot chroot apt install -y linux-image-amd64
 
 #Backports kernel
-#chroot chroot apt install -t trixie-backports linux-image-amd64 -y
+chroot chroot apt install -t trixie-backports linux-image-amd64 linux-headers-amd64 -y
 
 #Firmwares
 chroot chroot apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree firmware-amd-graphics firmware-realtek bluez-firmware \
