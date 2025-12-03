@@ -30,7 +30,7 @@ echo -e "#!/bin/sh\nexit 101" > chroot/usr/sbin/policy-rc.d
 chmod +x chroot/usr/sbin/policy-rc.d
 
 #Kernel
-chroot chroot apt install -t linux-image-amd64 -y
+chroot chroot apt install -y linux-image-amd64
 
 #Backports kernel
 #chroot chroot apt install -t trixie-backports linux-image-amd64 -y
