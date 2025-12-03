@@ -31,7 +31,7 @@ echo -e "#!/bin/sh\nexit 101" > chroot/usr/sbin/policy-rc.d
 chmod +x chroot/usr/sbin/policy-rc.d
 
 #Backports kernel
-chroot chroot apt install -t trixie-backports linux-image-amd64 -y
+#chroot chroot apt install -t trixie-backports linux-image-amd64 -y
 
 #Firmwares
 chroot chroot apt install -y linux-image-amd64 firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree firmware-amd-graphics firmware-realtek bluez-firmware \
