@@ -15,10 +15,6 @@ deb http://depo.pardus.org.tr/pardus yirmibes-deb main contrib non-free non-free
 deb http://depo.pardus.org.tr/guvenlik yirmibes-deb main contrib non-free non-free-firmware
 EOF
 
-cat > chroot/etc/apt/sources.list.d/trixie-backports.list << EOF
-deb http://deb.debian.org/debian trixie-backports main contrib non-free non-free-firmware
-EOF
-
 #cat > chroot/etc/apt/sources.list.d/yirmibes-backports.list << EOF
 #deb http://depo.pardus.org.tr/backports yirmibes-backports main contrib non-free non-free-firmware
 #EOF
@@ -38,7 +34,7 @@ chmod +x chroot/usr/sbin/policy-rc.d
 chroot chroot apt install -t trixie-backports linux-image-amd64 -y
 
 #Firmwares
-chroot chroot apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree firmware-amd-graphics firmware-realtek bluez-firmware \
+chroot chroot apt install -y linux-image-amd64 firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree firmware-amd-graphics firmware-realtek bluez-firmware \
 firmware-intel-sound firmware-iwlwifi firmware-atheros firmware-b43-installer firmware-b43legacy-installer firmware-bnx2 firmware-bnx2x firmware-brcm80211 \
 firmware-cavium firmware-libertas firmware-myricom firmware-netxen firmware-qlogic firmware-samsung firmware-siano firmware-ti-connectivity firmware-zd1211
     
